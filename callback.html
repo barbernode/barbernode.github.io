@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <h1>OAuth 2.0 Callback</h1>
+    <p>This page is used to handle the OAuth 2.0 callback.</p>
+    <script>
+        // Extract the token from the URL
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+        
+        // Perform further actions, like redirecting or storing the token
+        if (token) {
+            // Example: Store the token in local storage or send it to your server
+            localStorage.setItem('authToken', token);
+            // Redirect to a secured page or homepage
+            window.location.href = '/secured-page.html';
+        }
+    </script>
+</body>
+</html>
